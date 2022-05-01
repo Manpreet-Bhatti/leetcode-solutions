@@ -13,7 +13,7 @@ var isPalindrome = function (x) {
   const tempNum = x;
   let reverse = 0;
   while (x > 0) {
-    // Multiple reversed number by 10 and add last digit of x to it
+    // Multiply reversed number by 10 and add last digit of x to it
     reverse = reverse * 10 + (x % 10);
     // Remove last digit of x
     x = parseInt(x / 10);
