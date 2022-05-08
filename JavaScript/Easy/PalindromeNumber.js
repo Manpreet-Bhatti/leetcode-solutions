@@ -5,7 +5,7 @@
 
 var isPalindrome = function (x) {
   // Check to see if the number is negative
-  const isNeg = x < 0 ? true : false;
+  const isNeg = x < 0;
   // If number is negative, we know it cannot be a palindrome
   if (isNeg) {
     return false;
