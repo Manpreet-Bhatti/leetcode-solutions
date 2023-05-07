@@ -16,6 +16,8 @@ var findGCD = function (a, b) {
  * @return {boolean}
  */
 var hasGroupsSizeX = function (deck) {
+    if (deck.length <= 1) return false;
+
     const map = new Map();
     for (let i = 0; i < deck.length; i++) {
         if (map.has(deck[i])) map.set(deck[i], map.get(deck[i]) + 1);
