@@ -6,33 +6,32 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
 /**
  * @param {TreeNode} root
  * @return {number}
  */
 var sumRootToLeaf = function (root) {
-    const result = [];
     let sum = 0;
 
-    const dfs = (node, path) => {
+    const dfs = (node, currentNumber) => {
         if (!node) return;
 
-        path += node.val;
+        // Update the current number.
+        currentNumber = (currentNumber << 1) | node.val;
 
+        // If we reach a leaf node, add the current number to the sum.
         if (!node.left && !node.right) {
-            result.push(path);
+            sum += currentNumber;
             return;
         }
 
-        dfs(node.left, path);
-        dfs(node.right, path);
+        // Continue the depth-first search.
+        dfs(node.left, currentNumber);
+        dfs(node.right, currentNumber);
     };
 
-    dfs(root, '');
-
-    for (const path of result) {
-        sum += parseInt(path, 2);
-    }
+    dfs(root, 0);
 
     return sum;
 };
