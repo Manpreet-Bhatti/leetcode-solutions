@@ -19,5 +19,3 @@ var minimumCost = function (nums) {
 
   return firstNum + smallest + secondSmallest;
 };
-
-console.log(minimumCost([1, 2, 3]));
