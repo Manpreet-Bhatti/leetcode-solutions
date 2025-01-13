@@ -2,7 +2,6 @@
  * @param {number[]} nums
  * @return {number}
  */
-
 var maxSubArray = function (nums) {
   let max = nums[0];
   let sum = nums[0];
