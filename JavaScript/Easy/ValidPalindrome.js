@@ -2,7 +2,6 @@
  * @param {string} s
  * @return {boolean}
  */
-
 var isPalindrome = function (s) {
   var i = 0;
   var j = s.length - 1;
